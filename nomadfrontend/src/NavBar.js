@@ -1,6 +1,11 @@
 import React from 'react';
 
-function NavBar() {
+function NavBar({ onLogout }) {
+  function handleLogout() {
+    fetch("/logout", {
+      method: "DELETE",
+    }).then(() => onLogout())
+  }
 
     return (
 
@@ -12,7 +17,7 @@ function NavBar() {
       <button>Friends</button>
       <button>Inbox</button>
       <button>Profile</button>
-      <button>Logout</button>
+      <button onClick={handleLogout}>Logout</button>
     </div>
     </nav>
     )
