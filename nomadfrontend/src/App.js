@@ -8,8 +8,8 @@ import { useState, useEffect } from 'react';
 // import {link, route, routes } from 'react-router-dom';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 function App() {
-  const [Reviews, setReviews] = useState([])
-  const [Users, setUsers] = useState([])
+  const [reviews, setReviews] = useState([])
+  const [users, setUsers] = useState([])
   // const navigate = useNavigate()
   useEffect(()=> {
     const getReviews = async () => {
@@ -38,7 +38,7 @@ function App() {
     // },
     {
       path: "/",
-      element: <Home setReveiws = {setReviews} reviews = {Reviews}/>
+      element: <Home setReveiws={setReviews} reviews={reviews} user = {users} setUsers = {setUsers}/>
     },
     // {
     //   path: "/NavBar",
@@ -46,7 +46,7 @@ function App() {
     // },
     {
       path: "/UserProfile",
-      element: <UserProfile user = {Users} setUsers = {setUsers} />
+      element: <UserProfile user = {users} setUsers = {setUsers} />
     }
   ])
 

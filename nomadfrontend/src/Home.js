@@ -2,7 +2,8 @@
 
 import ReviewPosts from './ReviewPosts';
 import NavBar from './NavBar';
-function Home({reviews, setReviews}) {
+function Home({reviews, setReviews, users, setUsers}) {
+// const {id, score, likes, comments, restaurant_id, user_id} = reviews
     return(
         <>
     <div className="NavBar" />
@@ -11,7 +12,8 @@ function Home({reviews, setReviews}) {
             <NavBar />
             <div className="review-card"> {
             reviews.map((review) => {
-                return <ReviewPosts key={review.id} setReviews={setReviews} review={review} />
+                console.log(review)
+                return <ReviewPosts key={review.id} setReviews={setReviews} review={review} user = {users} setUsers = {setUsers} />
             })}</div>
         </>
     )

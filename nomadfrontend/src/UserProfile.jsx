@@ -1,11 +1,11 @@
 
 
 function UserProfile(Users, setUsers) {
-
+// let Users = {first_name, last_name, email, password, handle, avatar}
 
     return (
     <div>
-        <h1></h1>
+        <h1>{Users.handle}</h1>
     </div>
 
     )
