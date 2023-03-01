@@ -1,6 +1,6 @@
 // import { createBrowserRouter, browserRouter } from 'react-router-browser'
 // import { useNavigate } from "react-router-dom";
-function ReviewPosts({review, setReviews, users}) {
+function ReviewPosts({review,}) {
 // const ReviewPost = ({reviews, setReviews}) => {
 
     // const navigate = useNavigate()
@@ -13,7 +13,7 @@ function ReviewPosts({review, setReviews, users}) {
 return(
 
     <div className="review-card">
-        <img src={review.user.avatar} />
+        {/* <img src={review.user.avatar} /> */}
         <h1>{review.user.handle}</h1>
         <p>{review.user.first_name} ranked {review.restaurant.name}</p>
         <p>{review.restaurant.address}</p>

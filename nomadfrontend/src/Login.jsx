@@ -1,13 +1,14 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { Form } from 'react-router-dom'
-import { Link } from 'react-router-dom'
-// import { Signup } from './Signup'
+// import { Link } from 'react-router-dom'
+
 
 function Login({ users, setUsers }) {
 const [email, setEmail] = useState("")
 const [password, setPassword] = useState("")
 const navigate = useNavigate()
+const handleOnClick = () => navigate("/Signup")
 const cridentials = {email: email, password: password}
 
 function handleSubmit(e) {
@@ -45,9 +46,7 @@ return (
                 />
                 <button type="submit">Login</button>
             <p>Don't have an account?</p>
-              <a href="./Signup">
-            <button>Sign up</button>
-              </a>  
+            <button type="button" onClick={handleOnClick}>Sign up</button>
         </Form>
         </div>
     );

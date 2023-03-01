@@ -2,6 +2,7 @@
 
 import ReviewPosts from './ReviewPosts';
 import NavBar from './NavBar';
+import Profile from './Profile'
 function Home({reviews, setReviews, users, setUsers}) {
 // const {id, score, likes, comments, restaurant_id, user_id} = reviews
     return(
@@ -14,13 +15,7 @@ function Home({reviews, setReviews, users, setUsers}) {
            { reviews.map((review) => {
                return <ReviewPosts key={review.id} setReviews={setReviews} review={review} user = {users} setUsers = {setUsers} />
             })}</div>
-            {/* <div>
-
-            { users.map((user) => {
-                return <UserProfile key={user.id} setUser={setUsers}
-            })} />
-            </div> */}
-        </>
+                </>
     )
 }
 export default Home

@@ -1,13 +1,13 @@
 import './App.css';
-// import NavBar  from './NavBar';
+import { useState, useEffect } from 'react';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import Signup from './Signup'
 import Home from './Home';
 import Login from './Login';
 // import ReviewPosts from './ReviewPosts';
-import UserProfile from './UserProfile';
+import Profile from './Profile';
 // import { useNavigate } from 'react-router-dom';
-import { useState, useEffect } from 'react';
 // import {link, route, routes } from 'react-router-dom';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 function App() {
   const [reviews, setReviews] = useState([])
   const [users, setUsers] = useState([])
@@ -41,14 +41,18 @@ function App() {
       path: "/Home",
       element: <Home setReveiws={setReviews} reviews={reviews} user = {users} setUsers = {setUsers}/>
     },
-    // {
-    //   path: "/NavBar",
-    //   element: <NavBar />
-    // },
     {
-      path: "/UserProfile",
-      element: <UserProfile user = {users} setUsers = {setUsers} />
-    }
+      path: "/Signup",
+      element: <Signup />
+    },
+    {
+      path: "/Profile",
+      element: <Profile user = {users} setUsers = {setUsers} reviews={reviews}/>
+    },
+    // {
+    //   path: "/ReviewPosts",
+    //   element: <ReviewPosts />
+    // }
   ])
 
   return <RouterProvider router={router} />;
