@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { Form } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+// import { Signup } from './Signup'
 
 function Login({ users, setUsers }) {
 const [email, setEmail] = useState("")
@@ -42,7 +44,10 @@ return (
                 onChange={(e) => setPassword(e.target.value)}
                 />
                 <button type="submit">Login</button>
-            <p>Don't have an account? <button>Sign up</button></p>
+            <p>Don't have an account?</p>
+              <a href="./Signup">
+            <button>Sign up</button>
+              </a>  
         </Form>
         </div>
     );
