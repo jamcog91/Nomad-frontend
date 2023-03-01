@@ -8,13 +8,18 @@ function Home({reviews, setReviews, users, setUsers}) {
         <>
     <div className="NavBar" />
         {/* <img /> */}
-        <h1>Welcome</h1>
+            <h1>Welcome</h1>
             <NavBar />
-            <div className="review-card"> {
-            reviews.map((review) => {
-                console.log(review)
-                return <ReviewPosts key={review.id} setReviews={setReviews} review={review} user = {users} setUsers = {setUsers} />
+            <div className="review-card"> 
+           { reviews.map((review) => {
+               return <ReviewPosts key={review.id} setReviews={setReviews} review={review} user = {users} setUsers = {setUsers} />
             })}</div>
+            {/* <div>
+
+            { users.map((user) => {
+                return <UserProfile key={user.id} setUser={setUsers}
+            })} />
+            </div> */}
         </>
     )
 }

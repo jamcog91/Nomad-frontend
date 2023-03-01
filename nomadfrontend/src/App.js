@@ -1,6 +1,7 @@
 import './App.css';
 // import NavBar  from './NavBar';
 import Home from './Home';
+import Login from './Login';
 // import ReviewPosts from './ReviewPosts';
 import UserProfile from './UserProfile';
 // import { useNavigate } from 'react-router-dom';
@@ -21,23 +22,23 @@ function App() {
     getReviews()
   },[])
 
-  useEffect(()=> {
-    const getUsers = async () => {
-      let req = await fetch("http://127.0.0.1:3000/users")
-      let res = await req.json()
-      setUsers(res)
-      console.log(res)
-    }
-    getUsers()
-  },[])
+  // useEffect(()=> {
+  //   const getUsers = async () => {
+  //     let req = await fetch("http://127.0.0.1:3000/users")
+  //     let res = await req.json()
+  //     setUsers(res)
+  //     console.log(res)
+  //   }
+  //   getUsers()
+  // },[])
   // const isLoggedin = true
   const router = createBrowserRouter([
-    // {
-    //   path: "/ReviewPosts",
-    //   element: <ReviewPosts setReveiws = {setReviews} reviews = {Reviews} />
-    // },
     {
       path: "/",
+      element: <Login user = {users} setUsers = {setUsers}/>
+    },
+    {
+      path: "/Home",
       element: <Home setReveiws={setReviews} reviews={reviews} user = {users} setUsers = {setUsers}/>
     },
     // {

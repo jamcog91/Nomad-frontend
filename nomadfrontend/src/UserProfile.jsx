@@ -1,7 +1,7 @@
 
 
 function UserProfile(Users, setUsers) {
-// let Users = {first_name, last_name, email, password, handle, avatar}
+// let User = {first_name, last_name, email, password, handle, avatar}
 
     return (
     <div>

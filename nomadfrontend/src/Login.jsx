@@ -1,33 +1,50 @@
-import {useState, useEffect} from 'React'
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
+import { Form } from 'react-router-dom'
 
-function Login({setUser}) {
+function Login({ users, setUsers }) {
 const [email, setEmail] = useState("")
 const [password, setPassword] = useState("")
+const navigate = useNavigate()
+const cridentials = {email: email, password: password}
 
 function handleSubmit(e) {
     e.preventDefault();
     fetch("/login", {
-        method: "POST",
+        method: 'POST',
         headers: {
-            "Content-Type": "application/json",
+            'Content-Type': 'application/json'
         },
-        body: JSON.sringify({ email, password }),
+        body: JSON.stringify(cridentials)
     })
         .then((req) => {
-        if (r.ok) {
-            req.json().then((user) => setUser(user));
+        if (req.ok) {
+            req.json().then((user) => setUsers(user));
+            console.log(users)
             navigate('/Home')
         }
-    return (
-        <form onSubmit={handleSubmit}>
+//         else setUser()
+})
+}
+return (
+    <div>
+
+        <Form onSubmit={handleSubmit}>
+            <p>Login</p>
             <input
-                text="text"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
+                type="text"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                />
+            <input 
+                type="text"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 />
                 <button type="submit">Login</button>
-        </form>
+            <p>Don't have an account? <button>Sign up</button></p>
+        </Form>
+        </div>
     );
 }
-)}}
 export default Login
