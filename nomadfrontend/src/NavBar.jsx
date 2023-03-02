@@ -7,7 +7,7 @@ function NavBar({ onLogout }) {
   const handleProfile = () => navigate('/Profile')
   // const handleForYou = () => navigate('/ForYou')
   const handlePost = () => navigate('/NewPost')
-  // const handleInbox = () => navigate('/Inbox')
+  const handleInbox = () => navigate('/Inbox')
   function handleLogout() {
     fetch("/logout", {
       method: "DELETE",
@@ -23,7 +23,7 @@ function NavBar({ onLogout }) {
           <button>For You</button>
             <button onClick={handlePost}>Post</button>
               <button>Friends</button>
-            {/* <button onClick={handleInbox}>Inbox</button> */}
+            <button onClick={handleInbox}>Inbox</button>
           <button onClick={handleProfile}>Profile</button>
         <button onClick={handleLogout}>Logout</button>
       </div>

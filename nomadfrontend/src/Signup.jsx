@@ -11,6 +11,7 @@ const [last_name, setLastName] = useState("");
 const [handle, setHandle] = useState("");
 const [avatar, setAvatar] = useState("");
 const navigate = useNavigate()
+const returnToLogin = () => navigate('/Login')
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -85,6 +86,8 @@ return (
             email={avatar}onChange={(e) => setAvatar(e.target.value)}
             />
             <button type="submit">Sign Up!</button>
+            <p>Already have and acount?</p>
+            <button onClick={returnToLogin}>Return to Login</button>
             </Form>
         </div>
     </div>

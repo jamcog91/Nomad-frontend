@@ -4,6 +4,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Signup from './Signup'
 import Home from './Home';
 import Login from './Login';
+import NewPost from './NewPost';
+import Inbox from './Inbox';
 // import ReviewPosts from './ReviewPosts';
 import Profile from './Profile';
 // import { useNavigate } from 'react-router-dom';
@@ -47,7 +49,19 @@ function App() {
     },
     {
       path: "/Profile",
-      element: <Profile user = {users} setUsers = {setUsers} reviews={reviews}/>
+      element: <Profile user = {users} setUsers={setUsers} reviews={reviews}/>
+    },
+    {
+      path: "/Login",
+      element: <Login />
+    },
+    {
+      path: "/NewPost",
+      element: <NewPost />
+    },
+    {
+      path: "/Inbox",
+      element: <Inbox />
     },
     // {
     //   path: "/ReviewPosts",

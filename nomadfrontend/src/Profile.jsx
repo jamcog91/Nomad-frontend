@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 // import ReviewPost from './ReviewPost'
-
-function Profile({ users }) {
+import NavBar from './NavBar'
+function Profile({ users, setUser }) {
 // const {first_name, last_name, handle, } = users
 // const [reviews, setReviews] = useState([])
 const [me, setMe] = useState([])
@@ -14,20 +14,22 @@ const [me, setMe] = useState([])
     useEffect(() => {
         fetch('/me')
         .then((req) => req.json)
-        .then(setMe)
+        .then()
     },[])
-    console.log(me)
+    console.log(users)
 
-    const ProfilePage = users.map((user) => (
-        <ProfilePage 
-        key={user.id}
-        user={user}
-        />
-    )) 
+    // const ProfilePage = users.map((user) => (
+    //     <ProfilePage 
+    //     key={user.id}
+    //     user={user}
+    //     />
+    //)) 
     return (
     <div>
-        <h1>{users.handle}</h1>
-        <p>{me.first_name} {me.last_name}</p>
+        <h1>"@Nomad"</h1>
+        <p>User profile</p>
+        <NavBar />
+        <p></p>
         <p></p>
     </div>
 
