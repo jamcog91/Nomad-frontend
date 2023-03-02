@@ -15,7 +15,7 @@ const returnToLogin = () => navigate('/Login')
 
     function handleSubmit(e) {
         e.preventDefault();
-        fetch('Signup', {
+        fetch('/Signup', {
             method: 'POST',
             headers: {
                 "content-type": "application/json",

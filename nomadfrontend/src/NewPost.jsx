@@ -5,7 +5,7 @@ import RestaurantList from './RestaurantList'
 
 function NewPost() {
     const [restaurant, setRestaurant] = useState([])
-    const [searchRestaurant, setSeatchRestaurant] = useState([])
+    const [searchRestaurant, setSeatchRestaurant] = useState("")
 
 useEffect(() => { 
     const fetchRestaurant = async () => {
