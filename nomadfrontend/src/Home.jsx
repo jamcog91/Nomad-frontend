@@ -6,15 +6,22 @@ import NavBar from './NavBar';
 function Home({reviews, setReviews, users, setUsers}) {
 // const {id, score, likes, comments, restaurant_id, user_id} = reviews
 // const navigate = useNavigate()
+// console.log(reviews)
     return(
     <>
         {/* <img /> */}
         <h1>Nomad</h1>
             <NavBar />
-            <div>Welcome</div>
+            <div>Welcome </div>
                 <div className="review-card"> 
-                    { reviews.map((review) => {
-                    return <ReviewPosts key={review.id} setReviews={setReviews} review={review} user = {users} setUsers = {setUsers} />})}         
+                    {reviews.map((review) => {
+                    return <ReviewPosts 
+                        key={review.id} 
+                        setReviews={setReviews}
+                        review={review} 
+                        user = {users} 
+                        setUsers = {setUsers} 
+                        />})}         
                 </div>
                 {/* <div>
                     { users.map((user) => {
