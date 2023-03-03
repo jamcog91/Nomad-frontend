@@ -1,12 +1,14 @@
 import './App.css';
 import { useState, useEffect } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import Login from './Login';
 import Signup from './Signup'
 import Home from './Home';
-import Login from './Login';
 import NewPost from './NewPost';
+import FindFriends from './FindFriends';
 import Inbox from './Inbox';
 import RestaurantProfile from './RestaurantProfile';
+import UserProfile from './UserProfile';
 // import ReviewPosts from './ReviewPosts';
 import Profile from './Profile';
 // import { useNavigate } from 'react-router-dom';
@@ -76,6 +78,14 @@ function App() {
       path: "/Inbox",
       element: <Inbox />
     },
+    {
+      path: "/FindFriends",
+      element: <FindFriends />
+    },
+    {
+      path: "/UserProfile/:id",
+      element: <UserProfile />
+    }
     // {
     //   path: "/ReviewPosts",
     //   element: <ReviewPosts />
