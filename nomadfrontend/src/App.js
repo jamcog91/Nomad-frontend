@@ -6,6 +6,7 @@ import Home from './Home';
 import Login from './Login';
 import NewPost from './NewPost';
 import Inbox from './Inbox';
+import RestaurantProfile from './RestaurantProfile';
 // import ReviewPosts from './ReviewPosts';
 import Profile from './Profile';
 // import { useNavigate } from 'react-router-dom';
@@ -14,15 +15,27 @@ function App() {
   const [reviews, setReviews] = useState([])
   const [users, setUsers] = useState([])
   // const navigate = useNavigate()
-  useEffect(()=> {
-    const getReviews = async () => {
-      let req = await fetch("http://127.0.0.1:3000/reviews")
-      let res = await req.json()
-      setReviews(res)
-      console.log(res)
-    }
-    getReviews()
-  },[])
+   useEffect(() => {
+    const fetchReviews = async () => {
+      try {
+        const response = await fetch("/reviews");
+        const reviewsArray = await response.json();
+        setReviews(reviewsArray);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchReviews();
+  }, []);
+  // useEffect(()=> {
+  //   const getReviews = async () => {
+  //     let req = await fetch("http://127.0.0.1:3000/reviews")
+  //     let res = await req.json()
+  //     setReviews(res.reviews)
+  //     console.log(res)
+  //   }
+  //   getReviews()
+  // },[])
 
   // useEffect(()=> {
   //   const getUsers = async () => {
@@ -52,8 +65,8 @@ function App() {
       element: <Profile user = {users} setUsers={setUsers} reviews={reviews}/>
     },
     {
-      path: "/Login",
-      element: <Login />
+      path: "/RestaurantProfile/:id",
+      element: <RestaurantProfile   />
     },
     {
       path: "/NewPost",

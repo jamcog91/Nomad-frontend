@@ -21,7 +21,7 @@ function NavBar({ onLogout }) {
       <div>
         <button onClick={handleHome}>home</button>
           <button>For You</button>
-            <button onClick={handlePost}>Post</button>
+            <button onClick={handlePost}>Find a Restaurant</button>
               <button>Friends</button>
             <button onClick={handleInbox}>Inbox</button>
           <button onClick={handleProfile}>Profile</button>

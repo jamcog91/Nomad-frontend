@@ -6,6 +6,7 @@ function Inbox() {
         <div>
             <h1>@Nomad</h1>
                <NavBar /> 
+               <p>Your inbox</p>
         </div>
 
     )
