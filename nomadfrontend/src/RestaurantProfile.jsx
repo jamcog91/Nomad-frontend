@@ -31,9 +31,33 @@ import { useState, useEffect } from 'react';
 import NavBar from './NavBar';
 import { useParams } from 'react-router-dom';
 
-const RestaurantProfile = () => {
+const RestaurantProfile = ({ reviews }) => {
     const [restaurant, setRestaurant] = useState(null);
+    const [averageScore, setAverageScore] = useState(null);
     const { id } = useParams();
+  
+  //   useEffect(() => {
+  //   const getReview = async () => {
+  //     try {
+  //       const req = await fetch(`/reviews/${id}`);
+  //       const res = await req.json();
+  //       setReview(res);
+  //     } catch (err) {
+  //       // console.error(err);
+  //     }
+  //   };
+  //   getReview();
+  // }, [id]);
+  useEffect(() => {
+    console.log(reviews)
+  let totalScore = 0;
+  const reviewKeys = Object.keys(reviews);
+  for (let i = 0; i < reviewKeys.length; i++) {
+    totalScore += reviews[reviewKeys[i]].score;
+  }
+  const avgScore = totalScore / reviewKeys.length;
+  setAverageScore(avgScore);
+}, [reviews]);
 
   useEffect(() => {
     const getRestaurant = async () => {
@@ -61,7 +85,10 @@ const RestaurantProfile = () => {
       <h2>{name}</h2>
       <h3>{address}</h3>
       <img src={image} alt={name} />
+      <h3>{averageScore}</h3>
       <p>{style}</p>
+      <p>Have you been here?</p>
+      <button>Make Review</button>
     </div>
   );
 };

@@ -12,9 +12,10 @@ function Home({reviews, setReviews, users, setUsers}) {
         {/* <img /> */}
         <h1>Nomad</h1>
             <NavBar />
-            <div>Welcome </div>
+            <div>Welcome</div>
                 <div className="review-card"> 
                     {reviews.map((review) => {
+                        // console.log(reviews)
                     return <ReviewPosts 
                         key={review.id} 
                         setReviews={setReviews}

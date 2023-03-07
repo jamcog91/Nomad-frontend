@@ -43,13 +43,13 @@ const displayRestaurants = restaurants.filter((restaurant) => {
 })
 // console.log(displayRestaurants)
         return (
-        <main>
+        <div>
             <h1>@Nomad</h1>
             <NavBar />
             <SearchRestaurant searchTerm={searchRestaurant} onSearchChange={setSeatchRestaurant}/>
             <RestaurantList restaurants={displayRestaurants}
             />
-        </main>
+        </div>
     )
 }
-export default NewPost
+export default NewPost;

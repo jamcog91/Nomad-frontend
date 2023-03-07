@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Login from './Login';
 import Signup from './Signup'
 import Home from './Home';
-import NewPost from './NewPost';
+import FindRestaurants from './FindRestaurants';
 import FindFriends from './FindFriends';
 import Inbox from './Inbox';
 import RestaurantProfile from './RestaurantProfile';
@@ -71,8 +71,8 @@ function App() {
       element: <RestaurantProfile   />
     },
     {
-      path: "/NewPost",
-      element: <NewPost />
+      path: "/FindRestaurants",
+      element: <FindRestaurants />
     },
     {
       path: "/Inbox",

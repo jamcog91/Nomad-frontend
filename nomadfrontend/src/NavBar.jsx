@@ -5,7 +5,7 @@ function NavBar({ onLogout }) {
   const navigate = useNavigate()
   const handleHome = () => navigate('/Home')
   // const handleForYou = () => navigate('/ForYou')
-  const handlePost = () => navigate('/NewPost')
+  const handlePost = () => navigate('/FindRestaurants')
   const handleFindFriends = () => navigate('/FindFriends')
   const handleProfile = () => navigate('/Profile')
   const handleInbox = () => navigate('/Inbox')
