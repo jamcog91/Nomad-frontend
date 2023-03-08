@@ -10,9 +10,11 @@ function Home({reviews, setReviews, users, setUsers}) {
     return(
     <>
         {/* <img /> */}
-        <h1>Nomad</h1>
+        <h1 className="text-green-600 font-serif fontsize first-line:text-5x1">Nomad</h1>
+            <div className="flex">
             <NavBar />
-            <div>Welcome</div>
+            </div>
+            <div className="text-2xl ml-5 mb-10">Welcome</div>
                 <div className="review-card"> 
                     {reviews.map((review) => {
                         // console.log(reviews)

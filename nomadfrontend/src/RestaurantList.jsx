@@ -6,7 +6,7 @@ function RestaurantList({ restaurants }) {
      return (
         <ul className="restaurant-list">
         {restaurants.map((restaurant) => {
-            return <RestaurantCard key={restaurant.id} restaurant={restaurant} />
+            return <RestaurantCard className="ml-10" key={restaurant.id} restaurant={restaurant} />
         })}
         </ul>
     )

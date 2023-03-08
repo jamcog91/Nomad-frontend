@@ -1,8 +1,8 @@
 // import { createBrowserRouter, browserRouter } from 'react-router-browser'
 // import { useNavigate } from "react-router-dom";
-import { useState } from 'react'
-function ReviewPosts({ review }) {
-const [review, setReview] = useState([])
+// import { useState } from 'react'
+function ReviewPosts({ review, setReview }) {
+// const [review, setReview] = useState([])
     const { id, score, likes, comments } = review
 
 // const navigate = useNavigate()
@@ -22,19 +22,13 @@ const [review, setReview] = useState([])
         // Update relevant DOM elements with the new number of likes
     })
 }
-    // const navigate = useNavigate()
-    // const openProfile = () => {
-    //     navigate('/profilePage/${user.id}')
-        
-    // }
-// }
 
 return(
 
-    <div className="review-card">
+    <div className="ml-10 mb-2 border-solid border-2 rounded-2xl border-green-800">
         {/* <img src={review.user.avatar} /> */}
-        <h1>{review.user.handle}</h1>
-        <p>{review.user.first_name} ranked {review.restaurant.name}</p>
+        <h1 className="ml-32">{review.user.handle}</h1>
+        <p className="m-8">{review.user.first_name} ranked {review.restaurant.name}</p>
         <p>{review.restaurant.address}</p>
         <p>{comments}</p>
         <h2>Score : {score}</h2>

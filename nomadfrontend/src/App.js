@@ -29,15 +29,6 @@ function App() {
     };
     fetchReviews();
   }, []);
-  // useEffect(()=> {
-  //   const getReviews = async () => {
-  //     let req = await fetch("http://127.0.0.1:3000/reviews")
-  //     let res = await req.json()
-  //     setReviews(res.reviews)
-  //     console.log(res)
-  //   }
-  //   getReviews()
-  // },[])
 
   // useEffect(()=> {
   //   const getUsers = async () => {

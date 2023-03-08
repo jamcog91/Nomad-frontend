@@ -6,7 +6,7 @@ const { name, address, image, style} = restaurant;
 const navigate = useNavigate()
 
     return (
-        <>
+        <div>
             <li className="restaurant-card" key={restaurant.id}>
                 <img src={image} alt={name} style={{width:"100px"}}/>
                 <h2>{name}</h2>
@@ -17,7 +17,8 @@ const navigate = useNavigate()
                 <button onClick={() => navigate(`/RestaurantProfile/${restaurant.id}`)}>+</button>
 
             </li>
-        </>
+
+        </div>
     )
 }
 export default RestaurantCard;
