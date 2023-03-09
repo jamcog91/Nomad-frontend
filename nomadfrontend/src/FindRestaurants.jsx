@@ -27,6 +27,7 @@ const fetchRestaurants = async() => {
 useEffect(() =>{
   fetchRestaurants()
 },[])
+
 // console.log(restaurants)
 // useEffect(() => { 
 //     const fetchRestaurant = async () => {

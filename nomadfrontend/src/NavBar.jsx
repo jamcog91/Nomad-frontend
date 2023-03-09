@@ -12,8 +12,9 @@ function NavBar({ onLogout }) {
   function handleLogout() {
     fetch("/logout", {
       method: "DELETE",
-    }).then(() => handleLogout())
-    navigate('/')
+    }).then(() => {
+      navigate('/')
+    })
   }
 
     return (

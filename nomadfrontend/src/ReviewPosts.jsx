@@ -27,10 +27,10 @@ return(
 
     <div className="ml-10 mb-2 border-solid border-2 rounded-2xl border-green-800">
         <div className="h-10 grid grid-cols-3 gap-4 content-evenly mt-4 mb-2">
-        <div>"avatar"</div>
-        <h1 className="text-center mt-2 font-serif text-xl">@{review.user.handle}</h1>
-        <div className="border-solid border-2 rounded-2xl border-green-800">
-        <h2 className="mt-2">Score : {score}</h2>
+        <img className=" mt-12 ml-8 h-24 w-28 rounded-xl" src="https://images.vexels.com/media/users/3/179999/raw/e57089477c9df34303522ad8a83849d3-pineapple-illustration-design.jpg" alt="pine-avatar"/>
+        <h1 className="text-center mt-14 font-serif text-xl">@{review.user.handle}</h1>
+        <div className="border-solid ml-64 bg-green-200 w-28 border-2 rounded-2xl mt-14 border-green-800">
+        <h2 className="mt-8 ml-4 text-lg">Score : {score}</h2>
         </div>
         </div>
         <p className="text-center text-2xl">{review.user.first_name} ranked {review.restaurant.name}</p>

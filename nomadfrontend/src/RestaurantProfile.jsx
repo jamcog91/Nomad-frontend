@@ -23,7 +23,7 @@ const RestaurantProfile = ({ user }) => {
   }, [id]);
 
   if (!restaurant) {
-    return <div>Loading...</div>;
+    return <div className="animate-pulse mt-90 ml-48 h-5 w-5 mr-3">Loading...</div>;
   }
 
   const { name, address, image, style } = restaurant;
@@ -38,15 +38,15 @@ const RestaurantProfile = ({ user }) => {
       <div className="ml-2 mb-2 border-solid border-4 rounded-2xl border-green-800">
       <h2 className="text-3xl ml-20 mb-2 mt-4">{name}</h2>
       <h3 className="text-1xl ml-20 mb-2 italic text-slate-600">{address}</h3>
-      <img src={image} className="max-w-full" alt={name} />
-      <p> Style: {style}</p>
+      <img src={image} className="ml-12 rounded-3xl" alt={name} />
+      <p className="text-1xl ml-20 mb-2 italic text-slate-600"> Style: {style}</p>
 {/* <h3>{averageScore}</h3> */}
       <div className="justify-items-end">
-     <p>Have you been here?</p>
+     <p className="ml-36 mt-4">Have you been here?</p>
       {modal ? <NewReview modal={modal} setModal={setModal} restaurant={restaurant} user={user} /> : null}
       <button onClick={() => 
         setModal(!modal)
-        }>Make Review</button>
+        } className="bg-transparent rounded mb-8 px-4 border ml-32 border-green-600 w-48 mt-2 h-8 hover:bg-lime-800 hover:text-white rounded-3x1 hover:rounded-xl transition-all">Make Review</button>
         </div>
     </div>
     </div>

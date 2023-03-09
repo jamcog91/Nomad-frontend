@@ -32,9 +32,9 @@ const RestaurantProfile = ({user}) => {
         <h1 className="text-green-600 font-serif mt-48 text-6xl content-baseline first-line:text-5x1">Nomad</h1>
         </div>
       <NavBar />
-      <img src={user.avatar} alt="avatar" />
-      <h2>{user.handle}</h2>
-      <h3>{user.first_name} {user.last_name}</h3>
+      <img src={user.avatar} alt="avatar" className="ml-20 rounded-full p-1 ring-2 ring-green-700" />
+      <h2 className="text-3xl ml-16 mb-4 mt-4">@{user.handle}</h2>
+      <h3 className="text-2xl ml-20 mb-10 ">{user.first_name} {user.last_name}</h3>
     </div>
   );
 };

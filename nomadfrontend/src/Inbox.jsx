@@ -9,7 +9,7 @@ function Inbox() {
         <h1 className="text-green-600 font-serif mt-48 text-6xl content-baseline first-line:text-5x1">Nomad</h1>
         </div>
                <NavBar /> 
-               <p>Your inbox</p>
+               <p className="text-3xl ml-12 mb-10">Your inbox</p>
         </div>
 
     )
