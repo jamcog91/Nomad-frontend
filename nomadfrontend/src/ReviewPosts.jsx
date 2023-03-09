@@ -26,16 +26,22 @@ function ReviewPosts({ review, setReview }) {
 return(
 
     <div className="ml-10 mb-2 border-solid border-2 rounded-2xl border-green-800">
-        {/* <img src={review.user.avatar} /> */}
-        <h1 className="ml-32">{review.user.handle}</h1>
-        <p className="m-8">{review.user.first_name} ranked {review.restaurant.name}</p>
-        <p>{review.restaurant.address}</p>
-        <p>{comments}</p>
-        <h2>Score : {score}</h2>
-        <p>{likes} likes</p>
-        <button onClick={handleLike}>like</button>
-        <button>comment</button>
-        <button>add review</button>
+        <div className="h-10 grid grid-cols-3 gap-4 content-evenly mt-4 mb-2">
+        <div>"avatar"</div>
+        <h1 className="text-center mt-2 font-serif text-xl">@{review.user.handle}</h1>
+        <div className="border-solid border-2 rounded-2xl border-green-800">
+        <h2 className="mt-2">Score : {score}</h2>
+        </div>
+        </div>
+        <p className="text-center text-2xl">{review.user.first_name} ranked {review.restaurant.name}</p>
+        <p className="text-center italic text-zinc-400">{review.restaurant.address}</p>
+        <p className="text-center">{comments}</p>
+        <p className="ml-72 italic mt-2">{likes} likes</p>
+        <div className="h-10 grid grid-cols-3 gap-4 content-evenly mt-4 mb-2">
+        <button className="ml-60 w-36 h-10 hover:bg-lime-800 hover:text-white rounded-3x1 hover:rounded-xl transition-all"onClick={handleLike}>like</button>
+        <button className="ml-60 w-36 hover:bg-lime-800 hover:text-white rounded-3x1 hover:rounded-xl transition-all">comment</button>
+        <button className="ml-60 w-36 hover:bg-lime-800 hover:text-white rounded-3x1 hover:rounded-xl transition-all">add review</button>
+        </div>
     </div>
     )
 }

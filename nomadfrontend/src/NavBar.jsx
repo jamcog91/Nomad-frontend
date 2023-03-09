@@ -12,14 +12,14 @@ function NavBar({ onLogout }) {
   function handleLogout() {
     fetch("/logout", {
       method: "DELETE",
-    }).then(() => onLogout())
+    }).then(() => handleLogout())
     navigate('/')
   }
 
     return (
 
     <nav>
-      <div className="flex top-15 mt-28 mb-8 ml-2 h-16 w-fit content-evenly rounded-xl bg-amber-300">
+      <div className="flex top-15 mt-2 mb-8 ml-6 h-16 w-fit content-evenly rounded-xl bg-amber-300">
         <button className="relitive flex items-center justify-center
         ml-4 w-24 h-12 m-2 mb-8 mx-2 bg-amber-300 hover:bg-lime-800
          hover:text-white rounded-3x1 hover:rounded-xl transition-all 
